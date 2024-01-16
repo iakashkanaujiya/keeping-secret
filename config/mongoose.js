@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
+require("dotenv").config({path: "config/config.env"})
 
-mongoose.connect("mongodb://0.0.0.0:27017/Keeping-Secret")
+const DB_URL = process.env.DB_URL;
+
+mongoose.connect(DB_URL, {
+    dbName: "keepingsecret",
+})
 
 const db = mongoose.connection;
 
