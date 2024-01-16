@@ -9,6 +9,7 @@ app.use(express.json())
 
 app.use(cors())
 dotenv.config({ path: "./config/config.env" })
+dotenv.config()
 app.use('/api', require('./routes/index'))
 
 // Public URL
